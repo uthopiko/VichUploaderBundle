@@ -30,6 +30,7 @@ before_install:
     - composer self-update
     - phpenv config-rm xdebug.ini || true
     - composer require --no-update symfony/symfony:${SYMFONY_VERSION}
+    - composer config -q -g github-oauth.github.com ${GITHUB_OAUTH_TOKEN}
 
 install: composer update --prefer-dist --ignore-platform-reqs
 
